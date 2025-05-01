@@ -12,7 +12,7 @@ export const projects: Project[] = [
     Built with modern technologies, SwapNest provides a seamless experience for both buyers and sellers,
     making it easier than ever to give pre-loved items a new home.`,
     technologies: ["Next.js", "TypeScript", "Express.js", "MongoDB", "Tailwind CSS", "Shadcn UI"],
-    demoUrl: "https://swap-nest-client-two.vercel.app/",
+    demoUrl: " https://swap-nest-client.vercel.app/",
     githubUrl: "https://github.com/username/repo",
     imageUrl: "/projects/swapnest.png",
     features: [
@@ -117,9 +117,9 @@ export const projects: Project[] = [
     The system includes advanced features like search functionality, content filtering, and
     user management capabilities.`,
     technologies: ["TypeScript", "Express.js", "MongoDB", "Mongoose"],
-    demoUrl: "https://blog-server-api.vercel.app/",
-    githubUrl: "https://github.com/SifatU360/Blog-Project.git",
-    imageUrl: "/projects/blog-server.png",
+    demoUrl: "https://blogproject-bice.vercel.app/",
+    githubUrl: "https://github.com/SifatU360/Blog-Project",
+    imageUrl: "/projects/blog.png",
     features: [
       "Role-based access control",
       "CRUD operations for blogs",
@@ -152,9 +152,9 @@ export const projects: Project[] = [
     The system includes features for inventory tracking, revenue calculations, and detailed
     reporting capabilities.`,
     technologies: ["TypeScript", "Express.js", "MongoDB", "Mongoose"],
-    demoUrl: "https://bookstore-server.vercel.app/",
-    githubUrl: "https://github.com/username/repo",
-    imageUrl: "/projects/bookstore.png",
+    demoUrl: "https://book-shop-pi-nine.vercel.app/",
+    githubUrl: " https://github.com/SifatU360/Book-Shop",
+    imageUrl: "/projects/book.png",
     features: [
       "Inventory management",
       "Order processing",
