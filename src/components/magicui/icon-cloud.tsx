@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
@@ -15,15 +16,23 @@ interface Icon {
 interface IconCloudProps {
   icons?: React.ReactNode[];
   images?: string[];
+  random?: number;
+  className?: string;
 }
 
 function easeOutCubic(t: number): number {
   return 1 - Math.pow(1 - t, 3);
 }
 
-export function IconCloud({ icons, images }: IconCloudProps) {
+export function IconCloud({ 
+  icons, 
+  images, 
+  random = 1, 
+  className = "" 
+}: IconCloudProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [iconPositions, setIconPositions] = useState<Icon[]>([]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [lastMousePos, setLastMousePos] = useState({ x: 0, y: 0 });
@@ -315,13 +324,7 @@ export function IconCloud({ icons, images }: IconCloudProps) {
       ref={canvasRef}
       width={400}
       height={400}
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseUp}
-      className="rounded-lg"
-      aria-label="Interactive 3D Icon Cloud"
-      role="img"
+      className={`size-full opacity-80 ${className}`}
     />
   );
 }
