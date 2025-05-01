@@ -1,5 +1,5 @@
 "use client";
-
+import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -30,7 +30,8 @@ import {
 } from "react-icons/si";
 import { TbBinaryTree2 } from "react-icons/tb";
 import { cn } from "@/lib/utils";
-
+import LoadingScreen from "../../components/loading";
+import { useState } from "react";
 export default function SkillsPage() {
   const skillCategories = {
     frontend: [
@@ -58,7 +59,7 @@ export default function SkillsPage() {
       { name: "Vercel", icon: <SiVercel />, level: "Intermediate", color: "#ffffff" },
     ],
   };
-
+  const [isLoading, setIsLoading] = useState(false);
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
@@ -99,6 +100,7 @@ export default function SkillsPage() {
 
   return (
     <>
+      {isLoading && <LoadingScreen />}
       <main className="min-h-screen py-24">
         {/* Background Effects */}
         <div className="fixed inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-cyan-500/5" />
@@ -209,6 +211,7 @@ export default function SkillsPage() {
           </div>
         </div>
       </footer>
+      <Footer />
     </>
   );
 }
