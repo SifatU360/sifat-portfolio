@@ -50,7 +50,7 @@ export default function About() {
                   <h3 className="text-xl font-semibold text-blue-400">Who I Am</h3>
                 </div>
                 <p className="text-gray-300 leading-relaxed">
-                  I'm a passionate learner and aspiring Full Stack Developer, currently focusing on modern web development. 
+                  I&apos;m a passionate learner and aspiring Full Stack Developer, currently focusing on modern web development. 
                   While I may be at the beginning of my professional journey, I bring fresh perspectives and a strong 
                   desire to create meaningful web applications.
                 </p>
@@ -67,7 +67,7 @@ export default function About() {
                 </div>
                 <p className="text-gray-300 leading-relaxed">
                   Through self-study and hands-on projects, I've developed skills in React, Next.js, and Node.js. 
-                  I'm constantly learning and building projects to improve my abilities and stay current with 
+                  I&apos;m constantly learning and building projects to improve my abilities and stay current with 
                   modern development practices.
                 </p>
               </motion.div>
