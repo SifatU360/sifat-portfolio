@@ -31,18 +31,20 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleHomeClick = (e: React.MouseEvent) => {
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
     e.preventDefault();
     setIsLoading(true);
-    // Simulate loading for smoother transition
     setTimeout(() => {
-      router.push('/');
+      router.push(path);
       setIsLoading(false);
     }, 1000);
   };
 
   return (
     <>
+      <AnimatePresence>
+        {isLoading && <LoadingScreen />}
+      </AnimatePresence>
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -63,7 +65,7 @@ export default function Navbar() {
               <Link 
                 href="/"
                 className="flex items-center space-x-2 group"
-                onClick={handleHomeClick}
+                onClick={(e) => handleNavigation(e, "/")}
               >
                 <div className="relative w-8 h-8">
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg transform group-hover:rotate-6 transition-transform" />
@@ -89,7 +91,11 @@ export default function Navbar() {
                   <Link
                     href={item.href}
                     className="relative text-gray-300 hover:text-white transition-colors duration-200 group"
-                    onClick={item.name === "Home" ? handleHomeClick : undefined}
+                    onClick={(e) => {
+                      if (item.href.startsWith('/')) {
+                        handleNavigation(e, item.href);
+                      }
+                    }}
                   >
                     <span>{item.name}</span>
                     <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform" />
@@ -149,7 +155,12 @@ export default function Navbar() {
                       <Link
                         href={item.href}
                         className="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 hover:bg-white/5 rounded-lg"
-                        onClick={() => setIsOpen(false)}
+                        onClick={(e) => {
+                          setIsOpen(false);
+                          if (item.href.startsWith('/')) {
+                            handleNavigation(e, item.href);
+                          }
+                        }}
                       >
                         {item.name}
                       </Link>
@@ -164,11 +175,6 @@ export default function Navbar() {
           </AnimatePresence>
         </div>
       </motion.nav>
-
-      {/* Loading Screen */}
-      <AnimatePresence>
-        {isLoading && <LoadingScreen />}
-      </AnimatePresence>
     </>
   );
 }
