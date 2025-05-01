@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   FaReact,
   FaNodeJs,
@@ -32,6 +33,7 @@ import { TbBinaryTree2 } from "react-icons/tb";
 import { cn } from "@/lib/utils";
 import LoadingScreen from "../../components/loading";
 import { useState } from "react";
+
 export default function SkillsPage() {
   const skillCategories = {
     frontend: [
@@ -60,9 +62,20 @@ export default function SkillsPage() {
     ],
   };
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
+  };
+
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setTimeout(() => {
+      router.push(path);
+      setIsLoading(false);
+    }, 1000);
   };
 
   const renderSkill = (skill: any, index: number) => (
@@ -116,7 +129,11 @@ export default function SkillsPage() {
         >
           {/* Header */}
           <motion.div variants={fadeInUp} className="text-center mb-16">
-            <Link href="/#skills" className="text-blue-400 hover:text-blue-300 mb-4 inline-block">
+            <Link 
+              href="/#skills" 
+              className="text-blue-400 hover:text-blue-300 mb-4 inline-block"
+              onClick={(e) => handleNavigation(e, '/')}
+            >
               ← Back to Home
             </Link>
             <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
