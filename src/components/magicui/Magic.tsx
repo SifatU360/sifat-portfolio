@@ -52,13 +52,12 @@ const techStack = {
 };
 
 export default function TechAnimation() {
-  // Flatten and shuffle the tech stack
   const slugs = Object.values(techStack)
     .flat()
     .sort(() => Math.random() - 0.5);
 
   const images = slugs.map(
-    (slug) => `https://cdn.simpleicons.org/${slug}/white`
+    (slug) => `https://cdn.simpleicons.org/${slug}`
   );
 
   return (
@@ -69,12 +68,12 @@ export default function TechAnimation() {
       className="relative"
     >
       <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 blur-3xl" />
-      <div className="relative flex aspect-square max-w-lg items-center justify-center overflow-hidden rounded-full border border-white/10 bg-slate-900/50 backdrop-blur-sm">
+      <div className="relative flex aspect-square max-w-md mx-auto items-center justify-center overflow-hidden rounded-full border border-white/10 bg-slate-900/50 backdrop-blur-sm">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-purple-500/20 animate-pulse" />
         <IconCloud 
           images={images} 
           random={1.5}
-          className="p-8" 
+          className="p-6" 
         />
       </div>
     </motion.div>
