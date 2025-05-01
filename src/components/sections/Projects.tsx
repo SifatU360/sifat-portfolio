@@ -5,10 +5,17 @@ import { Github, Globe } from "lucide-react"
 export default function Projects() {
   const projects = [
     {
-      title: "Project Name",
-      description: "A brief description of the project and its impact.",
-      technologies: ["React", "Node.js", "MongoDB"],
-      demoUrl: "https://demo.com",
+      title: "SwapNest",
+      description: "SwapNest is a modern web platform designed to simplify the exchange of second-hand goods. It connects users in a secure and user-friendly environment, making it easy to buy and sell.",
+      technologies: ["Next.js", "TypeScript", "Express.js", "MongoDB", "Tailwind CSS", "Shadcn UI"],
+      demoUrl: "https://swap-nest-client-two.vercel.app/",
+      githubUrl: "https://github.com/username/repo"
+    },
+    {
+      title: "Papyrus",
+      description: "Papyrus is an e-commerce platform for stationery products. It allows users to browse a wide range of stationery items, add them to cart, and make secure payments. Users can manage their profiles and view order history, while admins can manage products, orders, and users. Papyrus aims to provide a smooth and efficient online stationery shopping experience.",
+      technologies: ["React","Redux", "TypeScript","Express.js", "MongoDB", "Tailwind CSS", "Shadcn UI"],
+      demoUrl: "https://papyrus-client.vercel.app/",
       githubUrl: "https://github.com/username/repo"
     },
     // Add more projects
