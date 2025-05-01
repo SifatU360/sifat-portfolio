@@ -27,7 +27,6 @@ import {
   SiVercel,
   SiTailwindcss,
   SiExpress,
-  SiMongoose,
 } from "react-icons/si";
 import { TbBinaryTree2 } from "react-icons/tb";
 import { cn } from "@/lib/utils";
@@ -36,22 +35,22 @@ export default function SkillsPage() {
   const skillCategories = {
     frontend: [
       { name: "React", icon: <FaReact />, level: "Advanced", color: "#61DAFB" },
-      { name: "Next.js", icon: <SiNextdotjs />, level: "Advanced", color: "#ffffff" },
-      { name: "TypeScript", icon: <SiTypescript />, level: "Intermediate", color: "#3178C6" },
+      { name: "Next.js", icon: <SiNextdotjs />, level: "Intermediate", color: "#ffffff" },
+      { name: "TypeScript", icon: <SiTypescript />, level: "Advanced", color: "#3178C6" },
       { name: "JavaScript", icon: <SiJavascript />, level: "Advanced", color: "#F7DF1E" },
       { name: "Redux", icon: <SiRedux />, level: "Intermediate", color: "#764ABC" },
       { name: "Tailwind", icon: <SiTailwindcss />, level: "Advanced", color: "#06B6D4" },
     ],
     backend: [
-      { name: "Node.js", icon: <FaNodeJs />, level: "Advanced", color: "#339933" },
+      { name: "Node.js", icon: <FaNodeJs />, level: "Intermediate", color: "#339933" },
       { name: "Express", icon: <SiExpress />, level: "Intermediate", color: "#ffffff" },
-      { name: "MongoDB", icon: <SiMongodb />, level: "Intermediate", color: "#47A248" },
-      { name: "Mongoose", icon: <SiMongoose />, level: "Intermediate", color: "#2D3748" },
+      { name: "MongoDB", icon: <SiMongodb />, level: "Advanced", color: "#47A248" },
+      { name: "Mongoose", icon: <SiMongodb />, level: "Advanced", color: "#880000" },
     ],
     programming: [
-      { name: "C++", icon: <SiCplusplus />, level: "Intermediate", color: "#00599C" },
-      { name: "C", icon: <SiC />, level: "Beginner", color: "#A8B9CC" },
-      { name: "DSA", icon: <TbBinaryTree2 />, level: "Intermediate", color: "#22C55E" },
+      { name: "C++", icon: <SiCplusplus />, level: "Advanced", color: "#00599C" },
+      { name: "C", icon: <SiC />, level: "Advanced", color: "#A8B9CC" },
+      { name: "DSA", icon: <TbBinaryTree2 />, level: "Advanced", color: "#22C55E" },
     ],
     tools: [
       { name: "Git", icon: <FaGithub />, level: "Advanced", color: "#ffffff" },
