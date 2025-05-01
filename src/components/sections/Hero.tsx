@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Download, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { IconCloud } from "@/components/magicui/icon-cloud";
+import TechAnimation from "../magicui/Magic";
 
 // Technology slugs array
 const slugs = [
@@ -41,15 +42,37 @@ export default function Hero() {
   );
 
   return (
-    <section id="home" className="min-h-[90vh] relative flex items-center">
-      {/* Gradient Background */}
+    <section id="home" className="min-h-[90vh] relative flex items-center overflow-hidden">
+      {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5" />
-      
-      {/* Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f1a_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f1a_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
+      {/* Floating Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(3)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-72 h-72 bg-blue-500/10 rounded-full filter blur-3xl"
+            animate={{
+              x: [0, 100, 0],
+              y: [0, 50, 0],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: Math.random() * 10 + 10,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+          />
+        ))}
+      </div>
+
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content Column */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -125,17 +148,14 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Tech Cloud Column */}
+          {/* Tech Animation Column */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative hidden lg:block"
           >
-            <div className="aspect-square max-w-lg mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10 rounded-full animate-pulse" />
-              <IconCloud images={images} random={1.5} />
-            </div>
+            <TechAnimation />
           </motion.div>
         </div>
       </div>
