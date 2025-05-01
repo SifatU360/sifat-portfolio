@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Award, GitBranch, Database, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
+import Footer from "@/components/Footer";
 
 export default function AboutPage() {
   const fadeInUp = {
@@ -18,6 +19,7 @@ export default function AboutPage() {
   ];
 
   return (
+    <>
     <main className="min-h-screen py-24">
       {/* Background Effects */}
       <div className="fixed inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-cyan-500/5" />
@@ -144,6 +146,9 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </motion.div>
+      
     </main>
+    <Footer/>
+    </>
   );
 }

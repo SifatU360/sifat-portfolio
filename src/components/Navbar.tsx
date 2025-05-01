@@ -9,11 +9,11 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import LoadingScreen from "./loading";
 
 const navItems = [
-  { name: "Home", href: "#home" },
+  { name: "Home", href: "/" },
   { name: "About", href: "/about" }, 
   { name: "Projects", href: "#projects" },
   { name: "Skills", href: "/skills" },
-  { name: "Contact", href: "#contact" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -34,6 +34,12 @@ export default function Navbar() {
   const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
     e.preventDefault();
     setIsLoading(true);
+
+    // Special handling for home navigation - scroll to top
+    if (path === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     setTimeout(() => {
       router.push(path);
       setIsLoading(false);
@@ -92,7 +98,7 @@ export default function Navbar() {
                     href={item.href}
                     className="relative text-gray-300 hover:text-white transition-colors duration-200 group"
                     onClick={(e) => {
-                      if (item.href.startsWith('/')) {
+                      if (item.href.startsWith('/') || item.name === "Home") {
                         handleNavigation(e, item.href);
                       }
                     }}
@@ -157,7 +163,7 @@ export default function Navbar() {
                         className="block px-3 py-2 text-gray-300 hover:text-white transition-colors duration-200 hover:bg-white/5 rounded-lg"
                         onClick={(e) => {
                           setIsOpen(false);
-                          if (item.href.startsWith('/')) {
+                          if (item.href.startsWith('/') || item.name === "Home") {
                             handleNavigation(e, item.href);
                           }
                         }}

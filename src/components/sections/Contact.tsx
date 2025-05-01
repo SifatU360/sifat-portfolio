@@ -16,8 +16,11 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
+interface ContactProps {
+  standalone?: boolean;
+}
 
-export default function Contact() {
+export default function Contact({ standalone = false }: ContactProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -85,7 +88,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
+    <section id="contact" className={`${standalone ? '' : 'py-24'} relative overflow-hidden`}>
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent" />
 
