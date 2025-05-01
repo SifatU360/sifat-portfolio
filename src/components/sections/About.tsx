@@ -66,7 +66,7 @@ export default function About() {
                   <h3 className="text-xl font-semibold text-blue-400">My Journey</h3>
                 </div>
                 <p className="text-gray-300 leading-relaxed">
-                  Through self-study and hands-on projects, I've developed skills in React, Next.js, and Node.js. 
+                  Through self-study and hands-on projects, I&apos;ve developed skills in React, Next.js, and Node.js. 
                   I&apos;m constantly learning and building projects to improve my abilities and stay current with 
                   modern development practices.
                 </p>
