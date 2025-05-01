@@ -7,7 +7,6 @@ export default function Education() {
       degree: "Bachelor of Science in Computer Science and Engineering",
       institution: "University of Global Village",
       year: "2024-2027",
-    //   achievements: ["Dean's List", "First Class Honours", "Research Award"]
     },
     // Add more education entries
   ]
@@ -26,13 +25,6 @@ export default function Education() {
                 </Badge>
               </div>
               <p className="text-gray-300 mb-4">{edu.institution}</p>
-              {/* <div className="flex flex-wrap gap-2">
-                {edu.achievements.map((achievement, i) => (
-                  <Badge key={i} variant="outline">
-                    {achievement}
-                  </Badge>
-                ))}
-              </div> */}
             </CardContent>
           </Card>
         ))}
