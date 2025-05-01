@@ -78,7 +78,7 @@ export default function Contact() {
       text: "GitHub Profile",
     },
     {
-      href: "https://linkedin.com/in/yourusername",
+      href: "https://www.linkedin.com/in/sifatullah1046/",
       icon: <LinkedinIcon className="w-6 h-6" />,
       text: "LinkedIn Profile",
     },
