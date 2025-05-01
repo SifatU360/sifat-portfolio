@@ -6,7 +6,7 @@ A modern, responsive portfolio website built with Next.js 14, TypeScript, and Ta
 
 ## 🚀 Features
 
-- **Modern Tech Stack**: Built with Next.js 14, TypeScript, and Tailwind CSS
+- **Modern Tech Stack**: Built with Next.js 15, TypeScript, and Tailwind CSS
 - **Responsive Design**: Optimized for all screen sizes
 - **Interactive UI**: Smooth animations and transitions using Framer Motion
 - **3D Effects**: Engaging tech stack visualization
@@ -16,7 +16,7 @@ A modern, responsive portfolio website built with Next.js 14, TypeScript, and Ta
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Next.js 14
+- **Framework**: Next.js 15
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **UI Components**: shadcn/ui
