@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-
+import { Toaster } from "sonner";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -66,6 +66,9 @@ export default function RootLayout({
             {children}
           </div>
         </div>
+
+        {/* Toaster notifications */}
+        <Toaster position="top-right" expand={true} richColors />
 
         {/* Analytics and Speed Insights */}
         <Analytics />
