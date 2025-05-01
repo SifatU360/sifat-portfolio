@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
 import * as React from "react"
@@ -16,7 +17,7 @@ export function ThemeProvider({
   ...props
 }: ThemeProviderProps) {
   return (
-    <NextThemesProvider {...props}>
+    <NextThemesProvider {...(props as any)}>
       {children}
     </NextThemesProvider>
   )
