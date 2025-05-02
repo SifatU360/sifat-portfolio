@@ -253,8 +253,8 @@ function getCategoryIcon(category: string) {
 function getProficiencyWidth(level: string): string {
   switch (level.toLowerCase()) {
     case 'expert': return '100%';
-    case 'advanced': return '85%';
-    case 'intermediate': return '70%';
+    case 'advanced': return '89%';
+    case 'intermediate': return '74%';
     case 'beginner': return '50%';
     default: return '60%';
   }
