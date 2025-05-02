@@ -57,6 +57,34 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
             </Button>
           </div>
 
+          {/* Repository Links */}
+          {(project.githubUrl || project.serverUrl) && (
+            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-colors"
+                >
+                  <GithubIcon className="w-5 h-5" />
+                  <span>{project.category === 'fullstack' ? 'Frontend Repository' : 'View Repository'}</span>
+                </a>
+              )}
+              {project.serverUrl && (
+                <a
+                  href={project.serverUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-colors"
+                >
+                  <ServerIcon className="w-5 h-5" />
+                  <span>Backend Repository</span>
+                </a>
+              )}
+            </div>
+          )}
+
           <div className="space-y-8">
             <section>
               <h2 className="text-2xl font-semibold mb-4">About</h2>

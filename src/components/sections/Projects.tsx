@@ -10,6 +10,8 @@ import Link from "next/link";
 import { projects } from "@/config/projects";
 import LoadingScreen from ".././loading";
 import { useState } from "react";
+import { Tooltip } from "@/components/ui/tooltip";
+import { GithubIcon, ServerIcon } from "@/components/icons";
 
 interface ProjectsProps {
   standalone?: boolean;
@@ -60,9 +62,16 @@ export default function Projects({ standalone = false, filteredProjects = projec
                       />
                     </div>
                     <CardHeader className="relative">
-                      <div className="absolute -top-4 -right-4 bg-blue-500/20 backdrop-blur-md border border-blue-500/20 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <ArrowRight className="w-4 h-4 text-blue-400" />
-                      </div>
+                      {project.serverUrl && (
+                        <div className="absolute top-2 right-2">
+                          <Badge 
+                            variant="outline" 
+                            className="bg-blue-500/10 text-blue-400 border-blue-500/20"
+                          >
+                            Full Stack
+                          </Badge>
+                        </div>
+                      )}
                       <h3 className="text-2xl font-semibold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                         {project.title}
                       </h3>
@@ -85,38 +94,30 @@ export default function Projects({ standalone = false, filteredProjects = projec
                     </CardContent>
 
                     <CardFooter className="space-x-3">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="flex-1 bg-white/5 border-white/10 hover:bg-white/10 transition-colors duration-300"
-                        asChild
-                      >
-                        <a
-                          href={project.demoUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center"
-                        >
-                          <Globe className="w-4 h-4 mr-2" />
-                          Live Demo
-                        </a>
-                      </Button>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="flex-1 bg-white/5 border-white/10 hover:bg-white/10 transition-colors duration-300"
-                        asChild
-                      >
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center"
-                        >
-                          <Github className="w-4 h-4 mr-2" />
-                          GitHub
-                        </a>
-                      </Button>
+                      <div className="flex items-center space-x-2">
+                        <Tooltip content={project.serverUrl ? "View Frontend Code" : "View Code"}>
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 rounded-lg hover:bg-white/10 transition-colors"
+                          >
+                            <GithubIcon className="w-5 h-5" />
+                          </a>
+                        </Tooltip>
+                        {project.serverUrl && (
+                          <Tooltip content="View Backend Code">
+                            <a
+                              href={project.serverUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="p-2 rounded-lg hover:bg-white/10 transition-colors"
+                            >
+                              <ServerIcon className="w-5 h-5" />
+                            </a>
+                          </Tooltip>
+                        )}
+                      </div>
                     </CardFooter>
                   </Card>
                 </Link>
