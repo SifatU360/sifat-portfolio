@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import {
   FaReact,
-  // FaNodeJs,
+  FaNodeJs,
   FaServer,
   FaBrain,
   FaUsers,
@@ -29,7 +29,7 @@ import { TbBinaryTree2 } from "react-icons/tb";
 export default function Skills() {
   const developmentSkills = [
     { name: "React", icon: <FaReact className="text-[#61DAFB]" /> },
-    // { name: "Node.js", icon: <FaNodeJs className="text-[#339933]" /> },
+    { name: "Node.js", icon: <FaNodeJs className="text-[#339933]" /> },
     { name: "Redux", icon: <SiRedux className="text-[#764ABC]" /> },
     { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
     { name: "TypeScript", icon: <SiTypescript className="text-[#3178C6]" /> },
