@@ -17,7 +17,7 @@ interface ProjectsProps {
 }
 export default function Projects({ standalone = false, filteredProjects = projects }: ProjectsProps) {
   const [isLoading, setIsLoading] = useState(false);
-
+  const displayedProjects = standalone ? filteredProjects : filteredProjects.slice(0, 3);
   return (
     <>
       {isLoading && <LoadingScreen />}
@@ -37,7 +37,7 @@ export default function Projects({ standalone = false, filteredProjects = projec
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, index) => (
+            {displayedProjects.map((project, index) => (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0, y: 20 }}
