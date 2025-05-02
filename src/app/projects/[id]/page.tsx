@@ -2,22 +2,28 @@
 "use client";
 import { GithubIcon, ServerIcon } from "@/components/icons";
 import { projects } from "@/config/projects";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, Github, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import LoadingScreen from "@/components/loading";
 
 export default function ProjectPage({ params }: { params: { id: string } }) {
   const { id } = useParams();
   const project = projects.find(p => p.id === id);
-
+ const [isLoading, setIsLoading] = useState(false);
   if (!project) {
     return <div>Project not found</div>;
   }
 
   return (
+    <>
+    <AnimatePresence>
+        {isLoading && <LoadingScreen />}
+      </AnimatePresence>
     <main className="min-h-screen py-24">
       <div className="max-w-4xl mx-auto">
         <motion.div
@@ -176,5 +182,6 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
         </motion.section>
       )}
     </main>
+    </>
   );
 }
