@@ -10,7 +10,7 @@ import Link from "next/link";
 import { projects } from "@/config/projects";
 import LoadingScreen from ".././loading";
 import { useState } from "react";
-import { Tooltip } from "@/components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { GithubIcon, ServerIcon } from "@/components/icons";
 import { Badge } from "../ui/badge";
 
@@ -96,27 +96,42 @@ export default function Projects({ standalone = false, filteredProjects = projec
 
                     <CardFooter className="space-x-3">
                       <div className="flex items-center space-x-2">
-                        <Tooltip content={project.serverUrl ? "View Frontend Code" : "View Code"}>
-                          <a
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 rounded-lg hover:bg-white/10 transition-colors"
-                          >
-                            <GithubIcon className="w-5 h-5" />
-                          </a>
-                        </Tooltip>
-                        {project.serverUrl && (
-                          <Tooltip content="View Backend Code">
-                            <a
-                              href={project.serverUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="p-2 rounded-lg hover:bg-white/10 transition-colors"
-                            >
-                              <ServerIcon className="w-5 h-5" />
-                            </a>
+                        <TooltipProvider>
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <a
+                                href={project.githubUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-2 rounded-lg hover:bg-white/10 transition-colors"
+                              >
+                                <GithubIcon className="w-5 h-5" />
+                              </a>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>{project.serverUrl ? "View Frontend Code" : "View Code"}</p>
+                            </TooltipContent>
                           </Tooltip>
+                        </TooltipProvider>
+
+                        {project.serverUrl && (
+                          <TooltipProvider>
+                            <Tooltip>
+                              <TooltipTrigger asChild>
+                                <a
+                                  href={project.serverUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="p-2 rounded-lg hover:bg-white/10 transition-colors"
+                                >
+                                  <ServerIcon className="w-5 h-5" />
+                                </a>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p>View Backend Code</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </TooltipProvider>
                         )}
                       </div>
                     </CardFooter>

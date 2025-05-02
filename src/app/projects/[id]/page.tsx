@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
-
+import { GithubIcon, ServerIcon } from "@/components/icons";
 import { projects } from "@/config/projects";
 import { motion } from "framer-motion";
 import { ArrowLeft, Github, Globe } from "lucide-react";
