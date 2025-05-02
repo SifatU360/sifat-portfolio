@@ -81,7 +81,7 @@ export default function Hero() {
                 Specializing in modern web technologies with a focus on{' '}
                 <span className="text-blue-400">React</span>,{' '}
                 <span className="text-blue-400">Next.js</span>, and{' '}
-                <span className="text-blue-400">Node.js</span>.
+                <span className="text-blue-400">TypeScript</span>.
               </p>
             </motion.div>
 
