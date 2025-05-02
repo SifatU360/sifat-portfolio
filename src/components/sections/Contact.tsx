@@ -98,19 +98,22 @@ export default function Contact({ standalone = false }: ContactProps) {
         transition={{ duration: 0.8 }}
         className="max-w-7xl mx-auto px-4 relative"
       >
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-            Get In Touch
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Have a question or want to work together? Feel free to reach out!
-          </p>
-        </motion.div>
+        {/* Only show header when not in standalone mode */}
+        {!standalone && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              Get In Touch
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Have a question or want to work together? Feel free to reach out!
+            </p>
+          </motion.div>
+        )}
 
         <div className="grid md:grid-cols-2 gap-8">
           <motion.div

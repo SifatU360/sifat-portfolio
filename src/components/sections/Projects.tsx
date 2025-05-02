@@ -18,23 +18,28 @@ interface ProjectsProps {
 export default function Projects({ standalone = false, filteredProjects = projects }: ProjectsProps) {
   const [isLoading, setIsLoading] = useState(false);
   const displayedProjects = standalone ? filteredProjects : filteredProjects.slice(0, 3);
+
   return (
     <>
       {isLoading && <LoadingScreen />}
       <section id="projects" className={`${standalone ? '' : 'py-24'} relative overflow-hidden`}>
-        {/* Background Elements */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="max-w-7xl mx-auto px-4"
         >
-          <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-            Featured Projects
-          </h2>
-          <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
-            A collection of projects that showcase my expertise in full-stack development
-          </p>
+          {/* Only show header when not in standalone mode */}
+          {!standalone && (
+            <>
+              <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Featured Projects
+              </h2>
+              <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+                A collection of projects that showcase my expertise in full-stack development
+              </p>
+            </>
+          )}
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {displayedProjects.map((project, index) => (
@@ -120,7 +125,6 @@ export default function Projects({ standalone = false, filteredProjects = projec
           </div>
         </motion.div>
       </section>
-    
     </>
   );
 }
