@@ -12,6 +12,7 @@ import LoadingScreen from ".././loading";
 import { useState } from "react";
 import { Tooltip } from "@/components/ui/tooltip";
 import { GithubIcon, ServerIcon } from "@/components/icons";
+import { Badge } from "../ui/badge";
 
 interface ProjectsProps {
   standalone?: boolean;
