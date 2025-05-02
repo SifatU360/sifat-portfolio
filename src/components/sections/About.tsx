@@ -89,7 +89,7 @@ export default function About() {
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="w-1.5 h-1.5 bg-blue-400 rounded-full" />
-                      Learning TypeScript and Next.js
+                      Learning Next.js
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="w-1.5 h-1.5 bg-blue-400 rounded-full" />

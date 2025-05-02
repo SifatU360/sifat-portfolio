@@ -135,7 +135,7 @@ export default function AboutPage() {
                     My projects demonstrate proficiency in modern web technologies and best practices in software development.
                   </p>
                   <Link 
-                    href="/#projects"
+                    href="/projects"
                     className="text-blue-400 hover:text-blue-300 inline-flex items-center gap-2"
                   >
                     View My Projects →
