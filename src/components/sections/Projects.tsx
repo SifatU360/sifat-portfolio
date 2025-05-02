@@ -14,7 +14,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { GithubIcon, ServerIcon } from "@/components/icons";
 import { Badge } from "../ui/badge";
 import { useRouter } from "next/navigation";
-
+import { cn } from "@/lib/utils";
 interface ProjectsProps {
   standalone?: boolean;
   filteredProjects?: typeof projects;
@@ -76,16 +76,25 @@ export default function Projects({ standalone = false, filteredProjects = projec
                       />
                     </div>
                     <CardHeader className="relative">
-                      {project.serverUrl && (
-                        <div className="absolute top-2 right-2">
-                          <Badge 
-                            variant="outline" 
-                            className="bg-blue-500/10 text-blue-400 border-blue-500/20"
-                          >
-                            Full Stack
-                          </Badge>
-                        </div>
-                      )}
+                      <div className="absolute top-2 right-2">
+                        <Badge 
+                          variant="outline" 
+                          className={cn(
+                            "border text-sm",
+                            {
+                              'bg-blue-500/10 text-blue-400 border-blue-500/20': project.category === 'fullstack',
+                              'bg-green-500/10 text-green-400 border-green-500/20': project.category === 'frontend',
+                              'bg-purple-500/10 text-purple-400 border-purple-500/20': project.category === 'backend',
+                            }
+                          )}
+                        >
+                          {project.category === 'fullstack' 
+                            ? 'Full Stack' 
+                            : project.category === 'frontend' 
+                              ? 'Frontend'
+                              : 'Backend'}
+                        </Badge>
+                      </div>
                       <h3 className="text-2xl font-semibold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                         {project.title}
                       </h3>
