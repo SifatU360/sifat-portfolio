@@ -13,6 +13,7 @@ import { useState } from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { GithubIcon, ServerIcon } from "@/components/icons";
 import { Badge } from "../ui/badge";
+import { useRouter } from "next/navigation";
 
 interface ProjectsProps {
   standalone?: boolean;
@@ -20,7 +21,16 @@ interface ProjectsProps {
 }
 export default function Projects({ standalone = false, filteredProjects = projects }: ProjectsProps) {
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
   const displayedProjects = standalone ? filteredProjects : filteredProjects.slice(0, 3);
+
+  const handleProjectClick = (e: React.MouseEvent<HTMLAnchorElement>, projectId: string) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setTimeout(() => {
+      router.push(`/projects/${projectId}`);
+    }, 1000);
+  };
 
   return (
     <>
@@ -52,7 +62,10 @@ export default function Projects({ standalone = false, filteredProjects = projec
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Link href={`/projects/${project.id}`}>
+                <Link 
+                  href={`/projects/${project.id}`}
+                  onClick={(e) => handleProjectClick(e, project.id)}
+                >
                   <Card className="group h-full flex flex-col hover:scale-[1.02] transition-all duration-300 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/10 shadow-2xl">
                     <div className="relative aspect-video w-full overflow-hidden rounded-t-lg">
                       <Image
