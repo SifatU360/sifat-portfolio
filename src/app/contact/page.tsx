@@ -33,7 +33,7 @@ export default function ContactPage() {
         <div className="fixed inset-0 bg-[linear-gradient(to_right,#4f4f4f1a_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f1a_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
         {/* Header */}
-        <div className="py-24">
+        <div className="py-24 pb-0 mb-0">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -66,35 +66,6 @@ export default function ContactPage() {
           transition={{ delay: 0.3 }}
           className="py-16 relative"
         >
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  Location
-                </h3>
-                <p className="text-gray-400">
-                  Dhaka, Bangladesh
-                </p>
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  Availability
-                </h3>
-                <p className="text-gray-400">
-                  Open for freelance projects<br />
-                  Available for full-time positions
-                </p>
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  Response Time
-                </h3>
-                <p className="text-gray-400">
-                  Usually within 24 hours
-                </p>
-              </div>
-            </div>
-          </div>
         </motion.section>
 
         <Footer />

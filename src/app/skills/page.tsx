@@ -49,7 +49,7 @@ export default function SkillsPage() {
       { name: "Node.js", icon: <FaNodeJs />, level: "Intermediate", color: "#339933" },
       { name: "Express", icon: <SiExpress />, level: "Intermediate", color: "#ffffff" },
       { name: "MongoDB", icon: <SiMongodb />, level: "Advanced", color: "#47A248" },
-      { name: "Mongoose", icon: <SiMongodb />, level: "Advanced", color: "#880000" },
+      { name: "Mongoose", icon: <SiMongodb />, level: "Advanced", color: "#880000" }, // Optional: change icon or remove
     ],
     programming: [
       { name: "C++", icon: <SiCplusplus />, level: "Advanced", color: "#00599C" },
@@ -57,11 +57,12 @@ export default function SkillsPage() {
       { name: "DSA", icon: <TbBinaryTree2 />, level: "Advanced", color: "#22C55E" },
     ],
     tools: [
-      { name: "Git", icon: <FaGithub />, level: "Advanced", color: "#ffffff" },
+      { name: "GitHub", icon: <FaGithub />, level: "Advanced", color: "#ffffff" }, // Changed name to match icon
       { name: "Postman", icon: <SiPostman />, level: "Advanced", color: "#FF6C37" },
       { name: "Vercel", icon: <SiVercel />, level: "Intermediate", color: "#ffffff" },
     ],
   };
+  
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 

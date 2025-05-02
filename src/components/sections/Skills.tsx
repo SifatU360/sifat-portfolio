@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import {
   FaReact,
-  FaNodeJs,
+  // FaNodeJs,
   FaServer,
   FaBrain,
   FaUsers,
@@ -19,35 +19,46 @@ import {
   SiRedux,
   SiMongodb,
   SiCplusplus,
+  SiTailwindcss,
   SiC,
   SiPostman,
   SiVercel,
 } from "react-icons/si";
 import { TbBinaryTree2 } from "react-icons/tb";
 
-
 export default function Skills() {
   const developmentSkills = [
     { name: "React", icon: <FaReact className="text-[#61DAFB]" /> },
-    { name: "Node.js", icon: <FaNodeJs className="text-[#339933]" /> },
+    // { name: "Node.js", icon: <FaNodeJs className="text-[#339933]" /> },
+    { name: "Redux", icon: <SiRedux className="text-[#764ABC]" /> },
     { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
     { name: "TypeScript", icon: <SiTypescript className="text-[#3178C6]" /> },
     { name: "JavaScript", icon: <SiJavascript className="text-[#F7DF1E]" /> },
     { name: "Express", icon: <FaServer className="text-white" /> },
-  ];
-
-  const programmingSkills = [
-    { name: "C++", icon: <SiCplusplus className="text-[#00599C]" /> },
-    { name: "C", icon: <SiC className="text-[#A8B9CC]" /> },
-    { name: "DSA", icon: <TbBinaryTree2 className="text-green-400" /> },
-    { name: "Redux", icon: <SiRedux className="text-[#764ABC]" /> },
-    { name: "MongoDB", icon: <SiMongodb className="text-[#47A248]" /> },
+    {
+      name: "Tailwind",
+      icon: <SiTailwindcss />,
+      level: "Advanced",
+      color: "#38BDF8",
+    },
+    {
+      name: "Mongoose",
+      icon: <SiMongodb />,
+      level: "Advanced",
+      color: "#880000",
+    },
   ];
 
   const toolsAndPlatforms = [
     { name: "GitHub", icon: <FaGithub className="text-white" /> },
+    { name: "MongoDB", icon: <SiMongodb className="text-[#47A248]" /> },
     { name: "Postman", icon: <SiPostman className="text-[#FF6C37]" /> },
     { name: "Vercel", icon: <SiVercel className="text-white" /> },
+  ];
+  const programmingSkills = [
+    { name: "C++", icon: <SiCplusplus className="text-[#00599C]" /> },
+    { name: "C", icon: <SiC className="text-[#A8B9CC]" /> },
+    { name: "DSA", icon: <TbBinaryTree2 className="text-green-400" /> },
   ];
 
   const softSkills = [
@@ -66,11 +77,9 @@ export default function Skills() {
     hidden: { y: 20, opacity: 0 },
     visible: { y: 0, opacity: 1 },
   };
-  
+
   return (
     <>
-    
-
       <section id="skills" className="py-16">
         <div className="max-w-7xl mx-auto px-4">
           <motion.h2
@@ -117,10 +126,10 @@ export default function Skills() {
             <Card className="group hover:scale-[1.01] transition-all duration-500 bg-gradient-to-br from-white/10 to-white/5 dark:bg-slate-900/20 backdrop-blur-xl border border-white/10 shadow-2xl">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-semibold text-blue-400 mb-8">
-                  Programming
+                  Tools & Platforms
                 </h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-                  {programmingSkills.map((skill, index) => (
+                  {toolsAndPlatforms.map((skill, index) => (
                     <motion.div
                       key={index}
                       variants={itemVariants}
@@ -142,10 +151,10 @@ export default function Skills() {
             <Card className="group hover:scale-[1.01] transition-all duration-500 bg-gradient-to-br from-white/10 to-white/5 dark:bg-slate-900/20 backdrop-blur-xl border border-white/10 shadow-2xl">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-semibold text-blue-400 mb-8">
-                  Tools & Platforms
+                  Programming
                 </h3>
                 <div className="grid grid-cols-3 gap-6">
-                  {toolsAndPlatforms.map((skill, index) => (
+                  {programmingSkills.map((skill, index) => (
                     <motion.div
                       key={index}
                       variants={itemVariants}
@@ -190,7 +199,6 @@ export default function Skills() {
           </motion.div>
         </div>
       </section>
-     
     </>
   );
 }
