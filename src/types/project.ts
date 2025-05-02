@@ -6,6 +6,7 @@ export interface Project {
   technologies: string[];
   demoUrl: string;
   githubUrl: string;
+  serverUrl?: string;
   imageUrl: string;
   category: 'frontend' | 'backend' | 'fullstack';
   features: string[];

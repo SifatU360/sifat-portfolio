@@ -16,7 +16,8 @@ export const projects: Project[] = [
     technologies: ["Next.js", "TypeScript", "Express.js", "MongoDB", "Tailwind CSS", "Shadcn UI"],
     category: "fullstack",
     demoUrl: " https://swap-nest-client.vercel.app/",
-    githubUrl: "https://github.com/username/repo",
+    githubUrl: "https://github.com/hossain-ahamed-khan/SwapNest-Client.git",
+    serverUrl: "https://github.com/Humayun1318/SwapNest-server.git",
     imageUrl: "/projects/swapnest.png",
     features: [
       "User authentication and profiles",
@@ -52,7 +53,8 @@ export const projects: Project[] = [
     technologies: ["React", "Redux", "TypeScript", "Express.js", "MongoDB", "Tailwind CSS", "Shadcn UI"],
     category: "fullstack",
     demoUrl: "https://papyrus-client.vercel.app/",
-    githubUrl: "https://github.com/username/repo",
+    githubUrl: "https://github.com/rafiferdos/papyrus.git",
+    serverUrl: "https://github.com/rafiferdos/papyrus-server.git",
     imageUrl: "/projects/papyrus.png",
     features: [
       "User authentication and profiles",
