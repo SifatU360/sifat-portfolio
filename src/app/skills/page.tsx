@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import Footer from "@/components/Footer";
@@ -198,38 +199,87 @@ export default function SkillsPage() {
         </motion.div>
       </main>
 
-      {/* New Footer Section */}
-      <footer className="py-12 relative">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+      {/* Professional Stats Section */}
+      <motion.footer 
+        className="py-16 relative mt-20"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
+        {/* Enhanced gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-blue-500/5 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
+        
         <div className="max-w-7xl mx-auto px-4 relative">
-          <div className="grid gap-8 md:grid-cols-3">
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                Continuous Learning
-              </h3>
-              <p className="text-sm text-gray-400">
-                Always exploring new technologies and keeping up with industry trends
-              </p>
-            </div>
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                Problem Solving
-              </h3>
-              <p className="text-sm text-gray-400">
-                100+ problems solved on various coding platforms
-              </p>
-            </div>
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                Collaboration
-              </h3>
-              <p className="text-sm text-gray-400">
-                Active contributor to open-source projects and tech communities
-              </p>
-            </div>
-          </div>
+          <motion.div 
+            className="grid gap-8 md:grid-cols-3"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { 
+                opacity: 1, 
+                y: 0,
+                transition: {
+                  staggerChildren: 0.2
+                }
+              }
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {[
+              {
+                title: "Continuous Learning",
+                description: "Always exploring new technologies and keeping up with industry trends",
+                icon: <FaBrain className="w-6 h-6 text-blue-400" />,
+                stat: "10+",
+                label: "Technologies Mastered"
+              },
+              {
+                title: "Problem Solving",
+                description: "100+ problems solved on various coding platforms",
+                icon: <FaCode className="w-6 h-6 text-blue-400" />,
+                stat: "100+",
+                label: "Problems Solved"
+              },
+              {
+                title: "Collaboration",
+                description: "Active contributor to open-source projects and tech communities",
+                icon: <FaUsers className="w-6 h-6 text-blue-400" />,
+                stat: "3+",
+                label: "Projects Contributed"
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                className="space-y-4 p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors duration-300 border border-white/10"
+              >
+                <div className="flex items-center gap-3">
+                  {item.icon}
+                  <h3 className="text-xl font-semibold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                    {item.title}
+                  </h3>
+                </div>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  {item.description}
+                </p>
+                <div className="pt-4 border-t border-white/10">
+                  <div className="text-2xl font-bold text-blue-400">
+                    {item.stat}
+                  </div>
+                  <div className="text-sm text-gray-400">
+                    {item.label}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
-      </footer>
+      </motion.footer>
       <Footer />
     </>
   );
