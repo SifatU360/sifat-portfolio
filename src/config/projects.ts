@@ -86,7 +86,7 @@ export const projects: Project[] = [
     The platform features a modern, responsive interface and supports multiple types of queries,
     from simple questions to complex task automation.`,
     technologies: ["React", "Redux", "TypeScript", "Express.js", "MongoDB", "Tailwind CSS", "Shadcn UI"],
-    category: "fullstack",
+    category: "frontend",
     demoUrl: "https://infinia-phi.vercel.app/",
     githubUrl: "https://github.com/SifatU360/infinia.git",
     imageUrl: "/projects/infinia.png",
