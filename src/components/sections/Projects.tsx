@@ -34,7 +34,7 @@ export default function Projects({ standalone = false, filteredProjects = projec
 
   return (
     <>
-      {isLoading && <LoadingScreen />}
+      {/* {isLoading && <LoadingScreen />} */}
       <section id="projects" className={`${standalone ? '' : 'py-24'} relative overflow-hidden`}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
