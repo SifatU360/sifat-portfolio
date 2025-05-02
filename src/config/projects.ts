@@ -1,7 +1,5 @@
 import { Project } from "@/types/project";
 
-
-
 export const projects: Project[] = [
   {
     id: "swapnest",
@@ -38,7 +36,18 @@ export const projects: Project[] = [
       "Implemented JWT authentication",
       "Integrated cloud storage for images",
       "Developed robust user management system"
-    ]
+    ],
+    contributions: {
+      role: "Frontend & Backend Developer",
+      responsibilities: [
+        "Developed and implemented the complete checkout system with transaction functionality",
+        "Designed and built responsive UI components for enhanced user experience",
+        "Integrated payment processing system in both frontend and backend",
+        "Implemented secure transaction handling and payment verification",
+        "Contributed to codebase refactoring and optimization",
+        "Collaborated with team members to ensure seamless integration"
+      ]
+    }
   },
   {
     id: "papyrus",
@@ -75,7 +84,19 @@ export const projects: Project[] = [
       "Integrated Stripe payment system",
       "Implemented real-time inventory tracking",
       "Created modular admin dashboard"
-    ]
+    ],
+    contributions: {
+      role: "Full Stack Developer",
+      responsibilities: [
+        "Integrated Shurjopay payment gateway in both frontend and backend",
+        "Developed complete product listing and single product view functionality",
+        "Implemented user authentication and account creation system",
+        "Created responsive UI components and enhanced visual design",
+        "Built RESTful APIs for product management and user operations",
+        "Optimized database queries and API endpoints for better performance",
+        "Participated in code reviews and architecture discussions"
+      ]
+    }
   },
   {
     id: "infinia",

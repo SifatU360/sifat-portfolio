@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { projects } from "@/config/projects";
@@ -8,7 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 
-export default function ProjectDetails() {
+export default function ProjectPage({ params }: { params: { id: string } }) {
   const { id } = useParams();
   const project = projects.find(p => p.id === id);
 
@@ -17,7 +18,7 @@ export default function ProjectDetails() {
   }
 
   return (
-    <div className="min-h-screen py-24 px-4">
+    <main className="min-h-screen py-24">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -106,6 +107,46 @@ export default function ProjectDetails() {
           </div>
         </motion.div>
       </div>
-    </div>
+
+      {/* Contributions Section */}
+      {project.contributions && (
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="max-w-4xl mx-auto px-4 mt-16"
+        >
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-8">
+            <h2 className="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              My Contributions
+            </h2>
+            <div className="space-y-6">
+              <div className="flex items-center gap-2 text-gray-200">
+                <span className="font-medium">Role:</span>
+                <span>{project.contributions.role}</span>
+              </div>
+              
+              <div className="space-y-4">
+                <h3 className="font-medium text-gray-200">Key Responsibilities:</h3>
+                <ul className="grid gap-3">
+                  {project.contributions.responsibilities.map((responsibility, index) => (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.1 * index }}
+                      className="flex items-start gap-3 text-gray-300"
+                    >
+                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-blue-400 flex-shrink-0" />
+                      {responsibility}
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+      )}
+    </main>
   );
 }

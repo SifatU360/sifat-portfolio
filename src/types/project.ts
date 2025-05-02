@@ -12,4 +12,8 @@ export interface Project {
   features: string[];
   challenges: string[];
   solutions: string[];
+  contributions?: {
+    role: string;
+    responsibilities: string[];
+  };
 }
