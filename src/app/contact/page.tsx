@@ -57,7 +57,7 @@ export default function ContactPage() {
         </div>
 
         {/* Contact Form Section */}
-        <Contact />
+        <Contact standalone={true}/>
 
         {/* Additional Information */}
         <motion.section
