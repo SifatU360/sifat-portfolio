@@ -1,5 +1,7 @@
 import { Project } from "@/types/project";
 
+
+
 export const projects: Project[] = [
   {
     id: "swapnest",
@@ -12,6 +14,7 @@ export const projects: Project[] = [
     Built with modern technologies, SwapNest provides a seamless experience for both buyers and sellers,
     making it easier than ever to give pre-loved items a new home.`,
     technologies: ["Next.js", "TypeScript", "Express.js", "MongoDB", "Tailwind CSS", "Shadcn UI"],
+    category: "fullstack",
     demoUrl: " https://swap-nest-client.vercel.app/",
     githubUrl: "https://github.com/username/repo",
     imageUrl: "/projects/swapnest.png",
@@ -47,6 +50,7 @@ export const projects: Project[] = [
     The system includes secure payment processing, real-time inventory updates, and a responsive design
     that works seamlessly across all devices.`,
     technologies: ["React", "Redux", "TypeScript", "Express.js", "MongoDB", "Tailwind CSS", "Shadcn UI"],
+    category: "fullstack",
     demoUrl: "https://papyrus-client.vercel.app/",
     githubUrl: "https://github.com/username/repo",
     imageUrl: "/projects/papyrus.png",
@@ -82,6 +86,7 @@ export const projects: Project[] = [
     The platform features a modern, responsive interface and supports multiple types of queries,
     from simple questions to complex task automation.`,
     technologies: ["React", "Redux", "TypeScript", "Express.js", "MongoDB", "Tailwind CSS", "Shadcn UI"],
+    category: "fullstack",
     demoUrl: "https://infinia-phi.vercel.app/",
     githubUrl: "https://github.com/SifatU360/infinia.git",
     imageUrl: "/projects/infinia.png",
@@ -117,6 +122,7 @@ export const projects: Project[] = [
     The system includes advanced features like search functionality, content filtering, and
     user management capabilities.`,
     technologies: ["TypeScript", "Express.js", "MongoDB", "Mongoose"],
+    category: "backend",
     demoUrl: "https://blogproject-bice.vercel.app/",
     githubUrl: "https://github.com/SifatU360/Blog-Project",
     imageUrl: "/projects/blog.png",
@@ -152,6 +158,7 @@ export const projects: Project[] = [
     The system includes features for inventory tracking, revenue calculations, and detailed
     reporting capabilities.`,
     technologies: ["TypeScript", "Express.js", "MongoDB", "Mongoose"],
+    category: "backend",
     demoUrl: "https://book-shop-pi-nine.vercel.app/",
     githubUrl: " https://github.com/SifatU360/Book-Shop",
     imageUrl: "/projects/book.png",

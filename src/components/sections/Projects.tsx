@@ -11,14 +11,18 @@ import { projects } from "@/config/projects";
 import LoadingScreen from ".././loading";
 import { useState } from "react";
 
-
-export default function Projects() {
+interface ProjectsProps {
+  standalone?: boolean;
+  filteredProjects?: typeof projects;
+}
+export default function Projects({ standalone = false, filteredProjects = projects }: ProjectsProps) {
   const [isLoading, setIsLoading] = useState(false);
 
   return (
     <>
       {isLoading && <LoadingScreen />}
-      <section id="projects" className="py-24">
+      <section id="projects" className={`${standalone ? '' : 'py-24'} relative overflow-hidden`}>
+        {/* Background Elements */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -33,7 +37,7 @@ export default function Projects() {
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
+            {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
                 initial={{ opacity: 0, y: 20 }}
