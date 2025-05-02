@@ -6,15 +6,34 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, Github, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import LoadingScreen from "@/components/loading";
 
 export default function ProjectPage({ params }: { params: { id: string } }) {
   const { id } = useParams();
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(true); // Start with loading true
   const project = projects.find((p) => p.id === id);
-  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    // Simulate loading time when component mounts
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleBackClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setTimeout(() => {
+      router.push('/#projects');
+    }, 1000);
+  };
+
   if (!project) {
     return <div>Project not found</div>;
   }
@@ -31,6 +50,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
           >
             <Link
               href="/#projects"
+              onClick={handleBackClick}
               className="inline-flex items-center text-blue-400 hover:text-blue-300 mb-8"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
