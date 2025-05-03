@@ -9,17 +9,23 @@ import TechAnimation from "../magicui/Magic";
 
 export default function Hero() {
   const handleDownload = () => {
-    // Replace with your actual resume URL
-    const resumeUrl = "/Sifatullah_resume.pdf";
+  
 
-    // Create a link element
+    // Create a direct download link
     const link = document.createElement("a");
-    link.href = resumeUrl;
-    link.download = "Sifatullah_resume.pdf";
-    link.target = "_blank";
+    link.href = "https://drive.google.com/file/d/19DtZAwoj4ptcoU0_KH76y_EGqW51uOL2/view";
+    link.setAttribute("download", "Sifatullah_resume.pdf"); // Force download
+    link.setAttribute("target", "_blank"); // Open in new tab as fallback
+    link.rel = "noopener noreferrer"; // Security best practice
+
+    // Trigger download
     document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link);
+    
+    // Cleanup
+    setTimeout(() => {
+      document.body.removeChild(link);
+    }, 100);
   };
 
   return (
