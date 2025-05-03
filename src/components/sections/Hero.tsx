@@ -10,12 +10,12 @@ import TechAnimation from "../magicui/Magic";
 export default function Hero() {
   const handleDownload = () => {
     // Replace with your actual resume URL
-    const resumeUrl = "/Sifat_Resume.pdf";
+    const resumeUrl = "/Sifatullah_resume.pdf";
 
     // Create a link element
     const link = document.createElement("a");
     link.href = resumeUrl;
-    link.download = "Sifat_Resume.pdf";
+    link.download = "Sifatullah_resume.pdf";
     link.target = "_blank";
     document.body.appendChild(link);
     link.click();

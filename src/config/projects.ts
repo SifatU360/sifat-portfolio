@@ -19,11 +19,9 @@ export const projects: Project[] = [
     imageUrl: "/projects/swapnest.png",
     features: [
       "User authentication and profiles",
-      "Real-time chat system",
       "Advanced search and filtering",
-      "Secure payment integration",
+      "Secure transactions handling",
       "Item listing and management",
-      "User ratings and reviews"
     ],
     challenges: [
       "Implementing real-time communication",
@@ -32,9 +30,7 @@ export const projects: Project[] = [
       "Managing user interactions"
     ],
     solutions: [
-      "Used WebSocket for real-time features",
       "Implemented JWT authentication",
-      "Integrated cloud storage for images",
       "Developed robust user management system"
     ],
     contributions: {
