@@ -1,5 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
+
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import { GithubIcon, ServerIcon } from "@/components/icons";
 import { projects } from "@/config/projects";
 import { motion, AnimatePresence } from "framer-motion";
@@ -11,8 +13,14 @@ import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import LoadingScreen from "@/components/loading";
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
-  const { id } = useParams();
+type Props = {
+  params: {
+    id: string;
+  };
+};
+
+export default function ProjectPage({ params }: Props) {
+  const { id } = useParams() as { id: string };
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true); // Start with loading true
   const project = projects.find((p) => p.id === id);
@@ -224,3 +232,5 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
     </>
   );
 }
+
+

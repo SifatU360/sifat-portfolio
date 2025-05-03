@@ -18,20 +18,25 @@ export const projects: Project[] = [
     serverUrl: "https://github.com/Humayun1318/SwapNest-server.git",
     imageUrl: "/projects/swapnest.png",
     features: [
-      "User authentication and profiles",
-      "Advanced search and filtering",
-      "Secure transactions handling",
-      "Item listing and management",
+      "User-friendly interface for buyers and sellers",
+      "Product listing, browsing, and purchasing functionality",
+      "Category-based product navigation",
+      "Secure login and registration with custom authentication",
+      "Advanced real-time search and filtering system",
+      "Mobile responsiveness across all devices",
+      "Responsive dashboard for managing user activities"
     ],
     challenges: [
-      "Implementing real-time communication",
-      "Ensuring secure transactions",
-      "Optimizing image uploads",
-      "Managing user interactions"
+      "Implementing real-time search and filtering efficiently",
+      "Designing a secure and scalable authentication system",
+      "Ensuring consistent user experience across devices",
+      "Managing large numbers of product listings with performance"
     ],
     solutions: [
-      "Implemented JWT authentication",
-      "Developed robust user management system"
+      "Implemented JWT-based custom authentication system",
+      "Developed a responsive and user-centric UI with modern frameworks",
+      "Optimized search and filtering using debounced queries",
+      "Structured scalable components for maintainability"
     ],
     contributions: {
       role: "Frontend & Backend Developer",
@@ -77,7 +82,7 @@ export const projects: Project[] = [
     ],
     solutions: [
       "Utilized Redux for state management",
-      "Integrated Stripe payment system",
+      "Integrated Shurjopay payment system",
       "Implemented real-time inventory tracking",
       "Created modular admin dashboard"
     ],
@@ -182,24 +187,24 @@ export const projects: Project[] = [
     githubUrl: " https://github.com/SifatU360/Book-Shop",
     imageUrl: "/projects/book.png",
     features: [
-      "Inventory management",
-      "Order processing",
-      "Revenue tracking",
-      "User authentication",
-      "Admin controls",
-      "Report generation"
+      "User authentication and role-based access control",
+      "CRUD operations for blogs by authenticated users",
+      "Admin capabilities to manage users and delete any blog",
+      "Search, sort, and filter functionality for public blog viewing",
+      "Robust error handling and secure JWT authentication"
     ],
     challenges: [
-      "Managing inventory accuracy",
-      "Handling concurrent orders",
-      "Implementing reporting system",
-      "Ensuring data consistency"
+      "Implementing secure and differentiated role-based permissions",
+      "Allowing only blog owners to update or delete their content",
+      "Handling public API queries efficiently with filters and pagination",
+      "Managing blocked users and restricting access appropriately"
     ],
     solutions: [
-      "Implemented transaction management",
-      "Developed queue system for orders",
-      "Created automated reporting",
-      "Used MongoDB aggregation"
+      "Implemented JWT-based authentication and middleware for authorization",
+      "Used Mongoose population and query filters for secure and efficient data access",
+      "Manually seeded the admin with secure credentials for exclusive permissions",
+      "Created structured error handlers to manage validation and runtime errors"
     ]
+    
   }
 ];
