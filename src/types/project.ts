@@ -4,11 +4,11 @@ export interface Project {
   description: string;
   longDescription: string;
   technologies: string[];
+  category: 'frontend' | 'backend' | 'fullstack';
   demoUrl: string;
   githubUrl: string;
   serverUrl?: string;
   imageUrl: string;
-  category: 'frontend' | 'backend' | 'fullstack';
   features: string[];
   challenges: string[];
   solutions: string[];
