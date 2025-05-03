@@ -93,6 +93,16 @@ export default function AboutPage() {
                       ))}
                     </div>
                   </div>
+                  <div>
+                    <h3 className="text-lg font-medium text-gray-200 mb-2">Programming</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {["C", "C++", "TypeScript", "JavaScript"].map((tech) => (
+                        <span key={tech} className="px-3 py-1 bg-blue-500/10 text-blue-300 rounded-full text-sm">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>

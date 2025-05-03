@@ -62,7 +62,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                I&apos;m <span className="text-blue-400">Sifat</span>
+                I&apos;m <span className="text-blue-400">Sifat Ullah</span>
               </motion.h1>
 
               <motion.h2 
